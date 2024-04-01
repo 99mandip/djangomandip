@@ -20,7 +20,7 @@ from django.urls import include, re_path
 # from django.conf.urls import url
 from boards import views 
 urlpatterns = [
-    path('', views.home, name='home'),
+     path('', views.home, name='home'),
     # re_path(r'^$', views.home, name='home'),
     path('admin/', admin.site.urls),
 ]
