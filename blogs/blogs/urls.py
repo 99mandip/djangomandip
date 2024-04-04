@@ -22,6 +22,12 @@ from boards import views
 urlpatterns = [
      path('', views.home, name='home'),
     # re_path(r'^$', views.home, name='home'),
+    re_path(r'^questions/(?P<pk>\d+)/$', views.question, name='question'),
+    re_path(r'^posts/(?P<slug>[-\w]+)/$', views.post, name='post'),
+    re_path(r'^blog/(?P<slug>[-\w]+)-(?P<pk>\d+)/$', views.blog_post, name='blog_post'),
+    re_path(r'^profile/(?P<username>[\w.@+-]+)/$', views.user_profile, name='user_profile'),
+    re_path(r'^articles/(?P<year>[0-9]{4})/$', views.year_archive, name='year'),
+    
     re_path(r'^about/$', views.about, name='about'),
     re_path(r'^boards/(?P<pk>\d+)/$', views.board_topics, name='board_topics'),
     path('admin/', admin.site.urls),
